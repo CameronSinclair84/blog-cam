@@ -12,22 +12,49 @@
 
 <body>
     <header>
-        <h1>Cameron's Super Basic Blog Site!</h1>
+        <h1>Cameron's Intense Tabbable Blog Site!</h1>
+        <h2>(Supports up to 10 blogs! (at the mo!))</h2>
     </header>
     <main>
-
-
         <form id="blogPostForm" onsubmit="createBlogPost(); return false;">
             <fieldset id="blogPost">
-                <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog post title" class="block" required/>
-                <textarea rows="10" name="blogContent" id="blogContent" placeholder="Blog content" class="block" required></textarea>
-                <button type="submit" value="Submit" id="submit">Submit</button>
-                <button type="button" onclick="outputBlogPosts(); return false;">Get blogs!</button>
-                <button type="button" onclick="clearBlogPosts(); return false;">Clear blogs!</button>
+                <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog post title" class="myInputs"
+                    required />
+                <textarea rows="10" name="blogContent" id="blogContent" placeholder="Blog content" class="myInputs"
+                    required></textarea>
+                <button type="submit" value="Submit" class="submit">Submit</button>
+                <button type="button" class="submit" onclick="outputBlogPosts(); return false;">Get blogs</button>
+                <button type="button" class="submit" onclick="clearBlogPosts(); return false;">Clear blogs</button>
+            <div id="blogsSubmitted">
+               
+            </div>
             </fieldset>
         </form>
-        <section id="outputBlogs">
 
+        <section id="outputBlogs">
+            <div id="blogCounter">Press 'Get blogs' to display blogs!</div>
+            <div id="tab">
+                <button class="tablinks" onclick="openBlog(event, 'Blog1')">Blog 1</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog2')">Blog 2</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog3')">Blog 3</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog4')">Blog 4</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog5')">Blog 5</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog6')">Blog 6</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog7')">Blog 7</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog8')">Blog 8</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog9')">Blog 9</button>
+                <button class="tablinks" onclick="openBlog(event, 'Blog10')">Blog 10</button>
+            </div>
+            <div id="Blog1" class="tabcontent"></div>
+            <div id="Blog2" class="tabcontent"></div>
+            <div id="Blog3" class="tabcontent"></div>
+            <div id="Blog4" class="tabcontent"></div>
+            <div id="Blog5" class="tabcontent"></div>
+            <div id="Blog6" class="tabcontent"></div>
+            <div id="Blog7" class="tabcontent"></div>
+            <div id="Blog8" class="tabcontent"></div>
+            <div id="Blog9" class="tabcontent"></div>
+            <div id="Blog10" class="tabcontent"></div>
         </section>
     </main>
 </body>

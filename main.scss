@@ -3,11 +3,13 @@ $mainbgcolor: lightgray;
 $sectionbgcolor: lightslategray;
 $inputbgcolor: rgb(177, 177, 177);
 $borderstyle: solid 2px black;
+$fontstyle: monospace;
+$fieldsetbgcolor: lightblue;
 
 * {
     margin: 0px;
     padding: 0px;
-    font-family: monospace;
+    font-family: $fontstyle;
 }
 
 header {
@@ -30,47 +32,92 @@ main {
     color: rgb(92, 68, 247);
   }
 
-form, section {
+form {
     border-radius: 5px;
     border: $borderstyle;
-    background-color: lightslategray;
+    background-color: $sectionbgcolor;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 90%;
+    height: 80%;
     width: 80%;
     margin: 10px;
+    padding: 20px;
+}
+
+section {
+    border-radius: 5px;
+    border: $borderstyle;
+    background-color: $sectionbgcolor;
+    height: 80%;
+    width: 80%;
+    margin: 10px;
+    padding: 20px;
 }
 
 fieldset {
     display: flex;
+    flex-direction: column;
     border-radius: 5px;
-    background-color: lightblue;
+    background-color: $fieldsetbgcolor;
     border: $borderstyle;
     width: 80%;
-    height: 80%;
-    margin: 0px 20px 0px 20px;
+    height: 90%;
+    //margin: 0px 20px 0px 20px;
 }
 
-.block {
-    margin: 10px;
+.myInputs {
+    margin: 20px auto;
     padding: 5px;
     width: 90%;
     border-radius: 4px;
     border: solid 1px grey;
-    font-family: monospace;
     background-color: $inputbgcolor;
 }
 
-#submit, button {
+.submit {
     background-color: rgb(92, 68, 247);
     width: 120px;
     text-align: center;
-    justify-content: center;
-    margin: 20px;
-    font-family: monospace;
+    margin: 20px auto;
+    padding: 5px;
 }
 
-.clickInput {
-    margin-left: 30px;
-}
+#tab {
+    display: none;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: $sectionbgcolor;
+  }
+
+  #tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  #tab button:hover {
+    background-color: $fieldsetbgcolor;
+  }
+
+  #tab button.active {
+    background-color: rgb(177, 177, 177);
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  #blogCounter, #blogsSubmitted {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+  }
