@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="build/main.css" />
-    <script src="index.js"></script>
+    <script src="build/index.js"></script>
     <title>CAMS BLOG</title>
 </head>
-<body onload="sayHello()">
-    BLOG TEST
+
+<body>
+    <header>
+        <h1>Cameron's Super Basic Blog Site!</h1>
+    </header>
+    <main>
+
+
+        <form id="blogPostForm" onsubmit="createBlogPost(); return false;">
+            <fieldset id="blogPost">
+                <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog post title" class="block" required/>
+                <textarea rows="10" name="blogContent" id="blogContent" placeholder="Blog content" class="block" required></textarea>
+                <button type="submit" value="Submit" id="submit">Submit</button>
+                <button type="button" onclick="outputBlogPosts(); return false;">Get blogs!</button>
+                <button type="button" onclick="clearBlogPosts(); return false;">Clear blogs!</button>
+            </fieldset>
+        </form>
+        <section id="outputBlogs">
+
+        </section>
+    </main>
 </body>
+
 </html>
