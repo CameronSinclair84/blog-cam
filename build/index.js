@@ -1,74 +1,53 @@
-class BlogPost {
-    public blogTitle: string;
-    public blogPost: string;
-    public blogTime: Date;
-
-    constructor(title: string, post: string) {
+var BlogPost = /** @class */ (function () {
+    function BlogPost(title, post) {
         this.blogTitle = title;
         this.blogPost = post;
         this.blogTime = new Date();
     }
-}
-
-let blogPosts: BlogPost[] = [];
-
-const createBlogPost = () => {
-    let form = document.getElementById("blogPostForm");
-
-    let title: string = form["blogTitle"].value;
-    let content: string = form["blogContent"].value;
-    let blogText: string = "";
-
+    return BlogPost;
+}());
+var blogPosts = [];
+var createBlogPost = function () {
+    var form = document.getElementById("blogPostForm");
+    var title = form["blogTitle"].value;
+    var content = form["blogContent"].value;
+    var blogText = "";
     blogPosts.push(new BlogPost(title, content));
-
     //alert('Blog submitted successfully!');
-
     (blogPosts.length == 1) ? blogText = " blog." : blogText = " blogs.";
     document.getElementById("blogsSubmitted").innerHTML = "You have submitted " +
         blogPosts.length + blogText;
-
     form.reset();
-}
-
-const clearBlogPosts = () => {
+};
+var clearBlogPosts = function () {
     document.getElementById("blogCounter").innerHTML = "Press 'Get blogs' to display blogs!";
     document.getElementById("tab").style.display = "none";
-    let tabcontent, i;
+    var tabcontent, i;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-}
-
-const outputBlogPosts = () => {
+};
+var outputBlogPosts = function () {
     clearBlogPosts();
-
-    let blogText: string = "";
-    let preBlogText: string = "";
-
+    var blogText = "";
+    var preBlogText = "";
     (blogPosts.length == 1) ? (preBlogText = " is ", blogText = " blog") :
         (preBlogText = " are ", blogText = " blogs");
-
     document.getElementById("blogCounter").innerHTML = "There" + preBlogText + blogPosts.length +
         blogText + " to display!";
-
-
     document.getElementById("tab").style.display = "block";
-    let i: number;
-    let tablinks = document.getElementsByClassName("tablinks");
+    var i;
+    var tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
         tablinks[i].style.display = "block";
     }
-
     for (i = blogPosts.length; i < tablinks.length; i++) {
         tablinks[i].style.display = "none";
     }
-
-    let outputTarget = document.getElementsByClassName("tabcontent");
-
-    let output: string[] = [];
-
+    var outputTarget = document.getElementsByClassName("tabcontent");
+    var output = [];
     for (i = 0; i < blogPosts.length; i++) {
         output[i] = "";
         output[i] += "<br><strong>Blog posted at: </strong>";
@@ -79,14 +58,12 @@ const outputBlogPosts = () => {
         output[i] += blogPosts[i].blogPost;
         output[i] += "<br>";
     }
-
     for (i = 0; i < output.length; i++) {
         outputTarget[i].innerHTML = output[i];
     }
-}
-
-const openBlog = (evt, blogNumber) => {
-    let i: number, tabcontent, tablinks;
+};
+var openBlog = function (evt, blogNumber) {
+    var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -97,4 +74,5 @@ const openBlog = (evt, blogNumber) => {
     }
     document.getElementById(blogNumber).style.display = "block";
     evt.currentTarget.className += " active";
-}
+};
+//# sourceMappingURL=index.js.map

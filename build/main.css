@@ -1,0 +1,116 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: monospace;
+}
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+body {
+  background-color: lightgray;
+}
+
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+::placeholder {
+  color: #5c44f7;
+}
+
+form {
+  border-radius: 5px;
+  border: solid 2px black;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  margin: 10px;
+  padding: 20px;
+}
+
+section {
+  border-radius: 5px;
+  border: solid 2px black;
+  background-color: lightslategray;
+  height: 80%;
+  width: 80%;
+  margin: 10px;
+  padding: 20px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: lightblue;
+  border: solid 2px black;
+  width: 80%;
+  height: 90%;
+}
+
+.myInputs {
+  margin: 20px auto;
+  padding: 5px;
+  width: 90%;
+  border-radius: 4px;
+  border: solid 1px grey;
+  background-color: #b1b1b1;
+}
+
+.submit {
+  background-color: #5c44f7;
+  width: 120px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+#tab {
+  display: none;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: lightslategray;
+}
+
+#tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+#tab button:hover {
+  background-color: lightblue;
+}
+
+#tab button.active {
+  background-color: #b1b1b1;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+#blogCounter, #blogsSubmitted {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */
