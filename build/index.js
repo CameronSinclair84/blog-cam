@@ -18,6 +18,7 @@ var createBlogPost = function () {
     document.getElementById("blogsSubmitted").innerHTML = "You have submitted " +
         blogPosts.length + blogText;
     form.reset();
+    outputBlogPosts();
 };
 var clearBlogPosts = function () {
     document.getElementById("blogCounter").innerHTML = "Press 'Get blogs' to display blogs!";

@@ -28,6 +28,7 @@ const createBlogPost = () => {
         blogPosts.length + blogText;
 
     form.reset();
+    outputBlogPosts();
 }
 
 const clearBlogPosts = () => {
