@@ -7,16 +7,18 @@ var BlogPost = /** @class */ (function () {
     return BlogPost;
 }());
 var blogPosts = [];
+var totalBlogPosts = 0;
 var createBlogPost = function () {
     var form = document.getElementById("blogPostForm");
     var title = form["blogTitle"].value;
     var content = form["blogContent"].value;
     var blogText = "";
     blogPosts.push(new BlogPost(title, content));
+    totalBlogPosts++;
     //alert('Blog submitted successfully!');
-    (blogPosts.length == 1) ? blogText = " blog." : blogText = " blogs.";
+    (totalBlogPosts == 1) ? blogText = " blog." : blogText = " blogs.";
     document.getElementById("blogsSubmitted").innerHTML = "You have submitted " +
-        blogPosts.length + blogText;
+        totalBlogPosts + blogText;
     form.reset();
     outputBlogPosts();
 };

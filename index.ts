@@ -11,6 +11,7 @@ class BlogPost {
 }
 
 let blogPosts: BlogPost[] = [];
+let totalBlogPosts: number = 0;
 
 const createBlogPost = () => {
     let form = document.getElementById("blogPostForm");
@@ -20,12 +21,13 @@ const createBlogPost = () => {
     let blogText: string = "";
 
     blogPosts.push(new BlogPost(title, content));
+    totalBlogPosts++;
 
     //alert('Blog submitted successfully!');
 
-    (blogPosts.length == 1) ? blogText = " blog." : blogText = " blogs.";
+    (totalBlogPosts == 1) ? blogText = " blog." : blogText = " blogs.";
     document.getElementById("blogsSubmitted").innerHTML = "You have submitted " +
-        blogPosts.length + blogText;
+        totalBlogPosts + blogText;
 
     form.reset();
     outputBlogPosts();
@@ -79,7 +81,7 @@ const outputBlogPosts = () => {
         output[i] += "<br><strong>Blog entry content: </strong>";
         output[i] += blogPosts[i].blogPost;
         output[i] += "<br><br>";
-        output[i] += "<button type='button' class='submit' onclick='delBlogPosts(" +i+ "); return false;'>Delete blog</button>";
+        output[i] += "<button type='button' class='submit' onclick='delBlogPosts(" + i + "); return false;'>Delete blog</button>";
     }
 
     for (i = 0; i < output.length; i++) {
