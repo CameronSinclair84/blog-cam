@@ -56,11 +56,16 @@ var outputBlogPosts = function () {
         output[i] += blogPosts[i].blogTitle;
         output[i] += "<br><strong>Blog entry content: </strong>";
         output[i] += blogPosts[i].blogPost;
-        output[i] += "<br>";
+        output[i] += "<br><br>";
+        output[i] += "<button type='button' class='submit' onclick='delBlogPosts(" + i + "); return false;'>Delete blog</button>";
     }
     for (i = 0; i < output.length; i++) {
         outputTarget[i].innerHTML = output[i];
     }
+};
+var delBlogPosts = function (index) {
+    blogPosts = blogPosts.filter(function (el) { return el !== blogPosts[index]; });
+    outputBlogPosts();
 };
 var openBlog = function (evt, blogNumber) {
     var i, tabcontent, tablinks;
